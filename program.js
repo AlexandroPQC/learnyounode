@@ -1,6 +1,4 @@
-var arguments = process.argv;
-var sum = 0;
-for (var i = 2; i < arguments.length; i++) {
-  sum += +arguments[i];
-}
-console.log(sum);
+// ex: node program.js file.txt
+var fs = require('fs');
+var contentBuffer = fs.readFileSync(process.argv[2]);
+console.log(contentBuffer.toString().split("\n").length-1);
