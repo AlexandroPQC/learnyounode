@@ -1,4 +1,6 @@
 // ex: node program.js file.txt
 var fs = require('fs');
-var contentBuffer = fs.readFileSync(process.argv[2]);
-console.log(contentBuffer.toString().split("\n").length-1);
+fs.readFile(process.argv[2], function (err, data) {
+  if (err) throw err;
+  console.log(data.toString().split("\n").length-1);
+})
